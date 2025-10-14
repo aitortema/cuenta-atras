@@ -1,19 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Tahoma, sans-serif;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    overflow: hidden;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 25px;
+    max-width: 700px;
+    width: 100%;
     text-align: center;
-    background-color: #f0f0f0;
+    animation: fadeIn 0.8s ease-in;
+    max-height: 95vh;
+    overflow: hidden;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header-image {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.header-image:hover {
+    transform: scale(1.02);
 }
 
 h1 {
     color: #333;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 700;
 }
 
 #cuentaAtras {
-    font-size: 3rem; /* Aumentamos el tamaño a 3 rem */
+    font-size: 3rem;
     color: #ff0000;
+    font-weight: bold;
+    margin: 20px 0;
+    padding: 15px;
+    background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.1);
+    letter-spacing: 2px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
 }
 
 #fechaFinal {
-  font-size: 1.2 rem;
-  color: #eb0eca;
+    font-size: 1.1rem;
+    color: #764ba2;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+.countdown-labels {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    #cuentaAtras {
+        font-size: 2.5rem;
+        letter-spacing: 1px;
+    }
+
+    #fechaFinal {
+        font-size: 1.1rem;
+    }
+
+    .container {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    #cuentaAtras {
+        font-size: 2rem;
+    }
+
+    .countdown-labels {
+        gap: 20px;
+        font-size: 0.8rem;
+    }
 }
